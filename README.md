@@ -1,3 +1,25 @@
+# rent-a-herby
+
+hier könnte unsere website entstehen
+
+## Platform, Install, Setup, ...
+
+- download node.js from nodejs.org (LTS-Version: 20.x)
+- install node.js
+
+## Angular vorbereiten
+siehe dazu: https://angular.io/guide/setup-local
+
+npm install -g @angular/cli
+
+## Angular Initialprojekt erzeugen
+
+In das richtige Verzeichnis springen und danach folgendes ausführen
+ng new rent-a-herby-frontend
+
+
+
+
 # RentAHerbyFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
