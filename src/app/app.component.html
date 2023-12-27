@@ -1,32 +1,22 @@
-
-<!--<header>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>Rent a Herby</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </mat-toolbar-row>
-
-    <mat-toolbar-row>
-      <span>Second Line</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar-row>
-  </mat-toolbar>
-</header>-->
 <header>
-  <h1>Rent a Herby</h1>
-  <h2>HOME</h2><h2>HERBY MIETEN</h2><h2>REISEZUBEHÖR</h2><h2>REISEROUTEN</h2><h2>KONTAKT</h2>
+  <div class="grid grid-rows-6">
+  <h1 class="font-bold place-self-center">Rent a Herby</h1>
+  <div class="grid md:grid-flow-col sm:grid-flow-row">
+    <div></div>
+    <button routerLink="/home" class="menu-text hover:underline">HOME</button>
+    <button routerLink="/rental"class="menu-text hover:underline">HERBY MIETEN</button>
+    <button routerLink="/accessories" class="menu-text hover:underline">REISEZUBEHÖR</button>
+    <button routerLink="/travelroutes" class="menu-text hover:underline">REISEROUTEN</button>
+    <button routerLink="/contact" class="menu-text hover:underline">KONTAKT</button>
+    <div></div>
+  </div>
+  <div class="row-span-4">
+    <img class="w-full" src="../assets/img/Banner.jpg">
+  </div>
+</div>
+  
 </header>
 <main class="main">  
-  <h1>Hier könnte bald deine Herby Vermietungsseite entstehen</h1>      
+  <router-outlet></router-outlet>
 </main>
 
-<router-outlet></router-outlet>

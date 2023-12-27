@@ -22,6 +22,9 @@ ng new rent-a-herby-frontend --no-standalone
 ng add @angular/material
 
 
+## Tailwind CSS einhängen
+siehe: https://tailwindcss.com/docs/installation
+
 
 
 # RentAHerbyFrontend

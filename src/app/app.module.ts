@@ -5,10 +5,20 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { RentalComponent } from './rental/rental.component';
+import { AccessoriesComponent } from './accessories/accessories.component';
+import { TravelroutesComponent } from './travelroutes/travelroutes.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ContactComponent,
+    RentalComponent,
+    AccessoriesComponent,
+    TravelroutesComponent
   ],
   imports: [
     BrowserModule,

@@ -2,5 +2,14 @@
     flex: 1 1 auto;
   }
 
+  h1 {    
+    font-size: 3rem;
+    color: #4cc9a4;
+  }
+
+  .menu-text {
+    color: #737373;
+    font-weight: bold;
+  }
 
 
