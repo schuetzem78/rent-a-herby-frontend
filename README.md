@@ -15,7 +15,11 @@ npm install -g @angular/cli
 ## Angular Initialprojekt erzeugen
 
 In das richtige Verzeichnis springen und danach folgendes ausführen
-ng new rent-a-herby-frontend
+ng new rent-a-herby-frontend --no-standalone
+-> SASS auswählen
+
+## Angular Material einhängen
+ng add @angular/material
 
 
 
