@@ -1,0 +1,41 @@
+@REM rd /S /Q files-for-docker-container
+@REM md files-for-docker-container
+
+@REM copy angular.json files-for-docker-container
+@REM copy Dockerfile files-for-docker-container
+@REM copy src files-for-docker-container
+
+@REM cd files-for-docker-container
+
+@REM Docker-Container stoppen
+docker container kill rent-a-herby-frontend-container
+
+@REM Docker-Container löschen
+@REM docker container rm <container-id>
+@REM docker container rm <name>
+docker container rm rent-a-herby-frontend-container
+
+@REM Docker-Image löschen
+docker image rm rent-a-herby-frontend-image
+
+@REM Docker-Image neu erstellen
+docker build --tag rent-a-herby-frontend-image .
+
+@REM Docker-Container erstellen (mit einem Namen, damit er beim nächsten Skript-Lauf auch leicht löschbar ist) und starten
+docker run -d -it -p 4200:80 --name rent-a-herby-frontend-container rent-a-herby-frontend-image
+
+
+@REM Docker-Images auflisten
+@REM docker image ls
+
+@REM Docker-Container erstellen (auf Basis des Docker-Images 'rent-a-herby-frontend')
+@REM docker container create rent-a-herby-frontend
+
+@REM Docker-Container auflisten
+@REM docker ps -a
+
+@REM docker container start rent-a-herby-frontend-container
+
+
+@REM docker container ls --all --format json
+@REM docker exec -it c924bcc76989 /bin/bash

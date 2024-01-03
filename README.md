@@ -25,8 +25,6 @@ ng add @angular/material
 ## Tailwind CSS einhängen
 siehe: https://tailwindcss.com/docs/installation
 
-
-
 # RentAHerbyFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
@@ -54,3 +52,26 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Deploy the app
+### Docker-Image erstellen
+docker build -t rent-a-herby-frontend .
+
+### Auflisten aller Docker-Images
+docker image ls
+
+### Docker-Container erstellen (auf Basis des Docker-Images)
+docker container create rent-a-herby-frontend
+
+### Docker-Container auflisten (auch die nicht gestarteten)
+docker ps -a
+
+### Docker-Container starten
+docker container start f380d0762fba
+
+
+
+
+
+
+
