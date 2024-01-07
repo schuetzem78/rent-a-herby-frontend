@@ -7,13 +7,22 @@ import { Component } from '@angular/core';
 })
 export class RentalComponent {
 
-  energySource: String = "Gas";
+  refrigeratorEnergySource: String = "Gas";
+  boilerEnergySource: String = "Gas";
 
-  selectGas() : void {
-    this.energySource = "Gas";
+  selectRefrigeratorGas() : void {
+    this.refrigeratorEnergySource = "Gas";
   }
 
-  selectStrom() : void {
-    this.energySource = "Strom";
+  selectRefrigeratorStrom() : void {
+    this.refrigeratorEnergySource = "Strom";
+  }
+
+  selectBoilerGas() : void {
+    this.boilerEnergySource = "Gas";
+  }
+
+  selectBoilerStrom() : void {
+    this.boilerEnergySource = "Strom";
   }
 }

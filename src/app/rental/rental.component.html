@@ -25,14 +25,73 @@
 
         <div>Der Kühlschrank hat keine Energiequelle. Bitte schalte den Kühlschrank über den Knopf komplett aus und gehe je nach Energiequelle wie folgt vor:</div>
         <mat-chip-listbox>
-            <mat-chip-option (click)="selectGas()" selected>Gas</mat-chip-option>
-            <mat-chip-option (click)="selectStrom()" color="accent">Landstrom</mat-chip-option>
+            <mat-chip-option (click)="selectRefrigeratorGas()" selected>Gas</mat-chip-option>
+            <mat-chip-option (click)="selectRefrigeratorStrom()" color="accent">Landstrom</mat-chip-option>
         </mat-chip-listbox>
         
-        <div *ngIf="energySource=='Gas'">● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
-        <div *ngIf="energySource=='Strom'">
+        <div *ngIf="refrigeratorEnergySource=='Gas'">● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+        <div *ngIf="refrigeratorEnergySource=='Strom'">
             <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div>
             <div>● Dies kannst du überprüfen, indem du z.B. am Control-Panel prüfst, ob das Symbol für Landstrom leuchtet.</div>
         </div>
     </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Der Boilerschalter wurde betätigt und es erscheint ein rotes Licht?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● Bitte schalte den Boiler erst wieder aus und gehe wir folgt vor:</div>
+
+        <mat-chip-listbox>
+            <mat-chip-option (click)="selectBoilerGas()" selected>Gas</mat-chip-option>
+            <mat-chip-option (click)="selectBoilerStrom()" color="accent">Landstrom</mat-chip-option>
+        </mat-chip-listbox>
+        
+        <div *ngIf="boilerEnergySource=='Gas'">
+            <div>● Bitte prüfe, ob die Klappe außen abgemacht ist</div>
+            <div>● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+        </div>
+            
+        <div *ngIf="boilerEnergySource=='Strom'">
+            <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div>
+            <div>● Dies kannst du überprüfen, indem du z.B. am Control-Panel prüfst, ob das Symbol für Landstrom leuchtet.</div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Warum kommt kein Wasser aus den Hähnen?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● Bitte prüfe, ob die Pumpe eingeschaltet ist</div>
+        <div>● Bitte prüfe, ob genug Wasser im Frischwassertank ist</div>
+        <div>● Bitte prüfe, ob das Frostschutzventil geschlossen ist.</div>
+    </mat-expansion-panel>
+
+    <h1 class="font-bold text-lg pt-8 ml-5">Handbücher</h1>
+
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>CBE BDS-180</mat-card-title>
+            <mat-card-subtitle>Automatischer DUO SYSTEM Wahlschalter für CBE BDS-180 Servicebatterien</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\img\cbe-bds-180-duo-system-wahlschalter-autom-servicebatterien.jpg" 
+                alt="Picture from Battery-Manager">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\000323_08_SELETTORE BDS-180.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
 </div>
