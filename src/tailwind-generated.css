@@ -544,12 +544,40 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
+.flex {
+  display: flex;
+}
+
 .grid {
   display: grid;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .grid-flow-row {
   grid-auto-flow: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .pb-3 {
@@ -560,8 +588,17 @@ video {
   padding-top: 0.75rem;
 }
 
+.pt-8 {
+  padding-top: 2rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -586,5 +623,3 @@ body {
     grid-auto-flow: column;
   }
 }
-
-

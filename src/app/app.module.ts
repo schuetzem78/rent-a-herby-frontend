@@ -13,6 +13,7 @@ import { AccessoriesComponent } from './accessories/accessories.component';
 import { TravelroutesComponent } from './travelroutes/travelroutes.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
