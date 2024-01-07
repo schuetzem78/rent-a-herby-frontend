@@ -25,14 +25,40 @@
 
         <div>Der Kühlschrank hat keine Energiequelle. Bitte schalte den Kühlschrank über den Knopf komplett aus und gehe je nach Energiequelle wie folgt vor:</div>
         <mat-chip-listbox>
-            <mat-chip-option (click)="selectGas()" selected>Gas</mat-chip-option>
-            <mat-chip-option (click)="selectStrom()" color="accent">Landstrom</mat-chip-option>
+            <mat-chip-option (click)="selectRefrigeratorGas()" selected>Gas</mat-chip-option>
+            <mat-chip-option (click)="selectRefrigeratorStrom()" color="accent">Landstrom</mat-chip-option>
         </mat-chip-listbox>
         
-        <div *ngIf="energySource=='Gas'">● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
-        <div *ngIf="energySource=='Strom'">
+        <div *ngIf="refrigeratorEnergySource=='Gas'">● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+        <div *ngIf="refrigeratorEnergySource=='Strom'">
             <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div>
             <div>● Dies kannst du überprüfen, indem du z.B. am Control-Panel prüfst, ob das Symbol für Landstrom leuchtet.</div>
         </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Der Boilerschalter wurde betätigt und es erscheint ein rotes Licht?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● Bitte schalte den Boiler erst wieder aus und gehe wir folgt vor:</div>
+
+        <mat-chip-listbox>
+            <mat-chip-option (click)="selectBoilerGas()" selected>Gas</mat-chip-option>
+            <mat-chip-option (click)="selectBoilerStrom()" color="accent">Landstrom</mat-chip-option>
+        </mat-chip-listbox>
+        
+        <div *ngIf="boilerEnergySource=='Gas'">● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+        <div *ngIf="boilerEnergySource=='Strom'">
+            <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div>
+            <div>● Dies kannst du überprüfen, indem du z.B. am Control-Panel prüfst, ob das Symbol für Landstrom leuchtet.</div>
+        </div>
+
+        <!-- <div>● Bitte prüfe, ob der Boiler angeschalten ist.</div>
+        <div class="ml-3">● Schalter nach oben => 50°C</div>
+        <div class="ml-3">● Schalter nach unten => 70°C</div>
+        <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div> -->
     </mat-expansion-panel>
 </div>
