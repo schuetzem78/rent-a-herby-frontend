@@ -24,7 +24,6 @@ docker build --tag rent-a-herby-frontend-image .
 @REM Docker-Container erstellen (mit einem Namen, damit er beim nächsten Skript-Lauf auch leicht löschbar ist) und starten
 docker run -d -it -p 4200:80 --name rent-a-herby-frontend-container rent-a-herby-frontend-image
 
-
 @REM Docker-Images auflisten
 @REM docker image ls
 
@@ -39,3 +38,13 @@ docker run -d -it -p 4200:80 --name rent-a-herby-frontend-container rent-a-herby
 
 @REM docker container ls --all --format json
 @REM docker exec -it c924bcc76989 /bin/bash
+@REM für einen nginx-Container
+@REM docker exec -it c924bcc76989 /bin/sh
+
+---------------------------------------------------
+
+REM Allgemeines nginx-Image erstellen
+docker build --file NginxAlpine.Dockerfile --tag nginx-alpine-image-image .
+
+docker run -d -it -p 4300:80 --name entrypoint-container -v /volume2/Daten/www/entrypoint/static-website:/usr/share/nginx/html nginx-alpine-image
+
