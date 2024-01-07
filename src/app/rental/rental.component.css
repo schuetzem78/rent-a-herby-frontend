@@ -1,8 +1,12 @@
 a.mat-raised-button {
-    color: white;
-    background-color: forestgreen;
-  }
+  color: white;
+  background-color: #4cc9a4;
+}
 
 a.mat-raised-button:hover {
-    background-color: #4cc9a4;    
+    background-color: forestgreen;
+}
+
+h1 {    
+  color: #4cc9a4;
 }
