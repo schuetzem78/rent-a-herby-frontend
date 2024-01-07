@@ -1,11 +1,9 @@
-  h1 {    
-    font-size: 2rem;
-    color: #4cc9a4;
-  }
+h1 {    
+  font-size: 2rem;
+  color: #4cc9a4;
+}
 
-  .menu-text {
-    color: #737373;
-    font-size: small;    
-  }
-
-
+.menu-text {
+  color: #737373;
+  font-size: small;    
+}
