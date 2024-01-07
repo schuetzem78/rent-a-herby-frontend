@@ -50,15 +50,26 @@
             <mat-chip-option (click)="selectBoilerStrom()" color="accent">Landstrom</mat-chip-option>
         </mat-chip-listbox>
         
-        <div *ngIf="boilerEnergySource=='Gas'">● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+        <div *ngIf="boilerEnergySource=='Gas'">
+            <div>● Bitte prüfe, ob die Klappe außen abgemacht ist</div>
+            <div>● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+        </div>
+            
         <div *ngIf="boilerEnergySource=='Strom'">
             <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div>
             <div>● Dies kannst du überprüfen, indem du z.B. am Control-Panel prüfst, ob das Symbol für Landstrom leuchtet.</div>
         </div>
+    </mat-expansion-panel>
 
-        <!-- <div>● Bitte prüfe, ob der Boiler angeschalten ist.</div>
-        <div class="ml-3">● Schalter nach oben => 50°C</div>
-        <div class="ml-3">● Schalter nach unten => 70°C</div>
-        <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div> -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Warum kommt kein Wasser aus den Hähnen?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● Bitte prüfe, ob die Pumpe eingeschaltet ist</div>
+        <div>● Bitte prüfe, ob genug Wasser im Frischwassertank ist</div>
+        <div>● Bitte prüfe, ob das Frostschutzventil geschlossen ist.</div>
     </mat-expansion-panel>
 </div>
