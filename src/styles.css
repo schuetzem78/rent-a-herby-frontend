@@ -7,6 +7,5 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .menu-text {
-    color: #737373;
-    font-size: small;    
+    color: #737373;   
   }
