@@ -4,14 +4,15 @@
         Bei Rent a Herby vermieten wir unser Wohnmobil, stellen Reiserouten zur Verfügung und bieten
         das nötige Reisezubehör. Entdecke die Welt mit Leichtigkeit und Komfort!</div>
 </div>
+
 <mat-divider></mat-divider>
 
 <div class="flex flex-col ml-3 mr-3 gap-4 items-center pt-7 pb-3">
     <h2 class="font-bold">Dienstleistungen</h2>
-    <div class="grid grid-cols-3 grid-rows-2 gap-3">
-        <img class="h-56 w-56" src="../../assets/img/rental.jpg">
-        <img class="h-56 w-56" src="../../assets/img/accessories.jpg">
-        <img class="h-56 w-56" src="../../assets/img/travelroutes.jpg">       
+    <div class="grid grid-cols-3 grid-rows-3 gap-3">
+        <img class="h-56 w-56 row-span-2" src="../../assets/img/rental.jpg">
+        <img class="h-56 w-56 row-span-2" src="../../assets/img/accessories.jpg">
+        <img class="h-56 w-56 row-span-2" src="../../assets/img/travelroutes.jpg">       
 
         <div>
             <h3 class="text-xs font-bold">Wohnmobilvermietung</h3>
@@ -29,8 +30,18 @@
             <h3 class="text-xs font-bold">Reiseroutenplanung</h3>
             <div class="menu-text text-xs">Lasse dir von uns eine maßgeschneiderte Reiseroute erstellen, die perfekt auf deine Wünsche und Interessen zugeschnitten ist. Entdecke versteckte Schätze und beliebte Sehenswürdigkeiten.</div>
             <button mat-button routerLink="/travelroutes"class="hover:underline mat-button">MEHR INFO</button>
-        </div>
-        
-        
+        </div>       
     </div>
 </div>
+
+<mat-divider></mat-divider>
+
+<div class="flex flex-col ml-3 mr-3 gap-4 items-center pt-7">
+    <h2 class="font-bold">Über uns</h2>
+    <div class="menu-text text-center text-xs">Rent a Herby ist ein Familienunternehmen mit Leidenschaft für Reisen. 
+        Seit Jahren erkunden wir die Welt und möchten unsere Begeisterung und Expertise mit unseren Kunden teilen. 
+        Unsere Mission ist es, unvergessliche Reiseerlebnisse zu schaffen, die von Komfort, Flexibilität und Abenteuerlust geprägt sind.
+    </div>
+    <button mat-button routerLink="/contact"class="hover:underline mat-button">ENTDECKEN</button>
+</div>
+
