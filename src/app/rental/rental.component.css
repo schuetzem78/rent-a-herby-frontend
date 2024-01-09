@@ -7,6 +7,9 @@ a.mat-raised-button:hover {
     background-color: forestgreen;
 }
 
-h1 {    
-  color: #4cc9a4;
+mat-card-title {
+  font-size: medium;
+}
+mat-card-subtitle{
+  font-size: small;
 }

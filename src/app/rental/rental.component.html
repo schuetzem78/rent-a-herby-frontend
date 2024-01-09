@@ -1,10 +1,10 @@
-<div class="flex flex-col ml-3 mr-3 gap-4">
+<div class="flex flex-col ml-3 mr-3 gap-4 ">
     <a 
         mat-raised-button href="https://paulcamper.de/c/76934/" 
         target="_blank" 
-        class="mat-raised-button w-64">über Paul Camper mieten</a>
+        class="mat-raised-button w-72 self-center">Herby über Paul Camper mieten</a>
 
-    <h1 class="font-bold text-lg pt-8 ml-5">Fragen & Antworten</h1>
+    <h1 class="font-bold text-lg pt-8 ml-5 uppercase text-emerald-500">Fragen & Antworten</h1>
 
     <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -26,7 +26,7 @@
         <div>Der Kühlschrank hat keine Energiequelle. Bitte schalte den Kühlschrank über den Knopf komplett aus und gehe je nach Energiequelle wie folgt vor:</div>
         <mat-chip-listbox>
             <mat-chip-option (click)="selectRefrigeratorGas()" selected>Gas</mat-chip-option>
-            <mat-chip-option (click)="selectRefrigeratorStrom()" color="accent">Landstrom</mat-chip-option>
+            <mat-chip-option (click)="selectRefrigeratorStrom()">Landstrom</mat-chip-option>
         </mat-chip-listbox>
         
         <div *ngIf="refrigeratorEnergySource=='Gas'">● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
@@ -47,7 +47,7 @@
 
         <mat-chip-listbox>
             <mat-chip-option (click)="selectBoilerGas()" selected>Gas</mat-chip-option>
-            <mat-chip-option (click)="selectBoilerStrom()" color="accent">Landstrom</mat-chip-option>
+            <mat-chip-option (click)="selectBoilerStrom()">Landstrom</mat-chip-option>
         </mat-chip-listbox>
         
         <div *ngIf="boilerEnergySource=='Gas'">
@@ -73,8 +73,9 @@
         <div>● Bitte prüfe, ob das Frostschutzventil geschlossen ist.</div>
     </mat-expansion-panel>
 
-    <h1 class="font-bold text-lg pt-8 ml-5">Handbücher</h1>
+<h1 class="font-bold text-lg pt-8 ml-5 uppercase text-emerald-500">Handbücher</h1>
 
+<div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 ">
     <mat-card>
         <mat-card-header>
           <mat-card-title-group>
@@ -174,7 +175,6 @@
                 href="assets\manuals\gas-crash-sensor\manual - truma-mono-control-cs-evo.pdf">Download</a>
         </mat-card-content>
     </mat-card>
+</div>
 
-    <br>
-    <br>
 </div>

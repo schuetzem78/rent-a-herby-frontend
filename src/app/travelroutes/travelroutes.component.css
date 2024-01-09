@@ -1,0 +1,16 @@
+a.mat-raised-button {
+    color: white;
+    background-color: #4cc9a4;
+  }
+  
+  a.mat-raised-button:hover {
+      background-color: forestgreen;
+  }
+
+  mat-card-title {
+    font-size: medium;
+  }
+  mat-card-subtitle{
+    font-size: small;
+  }
+  
