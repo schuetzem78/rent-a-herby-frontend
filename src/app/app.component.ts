@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
+import { version } from './../../package.json';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'rent-a-herby-frontend';
+  
+  AppVersion = version;
+
+  
 }
