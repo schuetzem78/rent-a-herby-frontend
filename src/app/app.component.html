@@ -8,7 +8,21 @@
     <button routerLink="/contact" class="hover:underline uppercase text-sm">Kontakt</button>
     
   </div>  
-  <img class="pt-3 pb-3 w-full" src="../assets/img/Banner.jpg">
+  <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]="9000">
+    <ng-template let-product pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+            <div class="mb-3">
+                <img src="{{ product.image }}" [alt]="product.name" class="shadow-2" />
+            </div>
+            <!--<div>
+                <h4 class="mb-1">{{ product.name }}</h4>
+                <h6 class="mt-0 mb-3">{{ '$' + product.price }}</h6>                
+                <div class="mt-5 flex align-items-center justify-content-center gap-2">                
+            </div>
+            </div>-->
+        </div>
+    </ng-template>
+</p-carousel>
 </header>
 
 <main class="main pb-3">  

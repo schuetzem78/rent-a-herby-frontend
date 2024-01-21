@@ -10,5 +10,14 @@ export class AppComponent {
   
   AppVersion = version;
 
-  
+
+  products = [new Product(), new Product, new Product];
+}
+
+
+export class Product{
+  name="Produktname";
+  price="0,11";
+  image="./../assets/img/rental.jpg"
+
 }
