@@ -74,6 +74,8 @@ sudo docker ps
 
 Öffentliche Adresse: http://785vrh4ungtam6ne.myfritz.net
 
+http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:80
+
 Port (Standardport): 80
 wird umgeleitet auf Docker-Container
 
