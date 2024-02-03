@@ -26,6 +26,10 @@ cp <source> <destination>
 CoPy
 Kopiert Dateien
 
+chmod
+z.B. chmod --recursive 777 <folder>
+Berechtigungen setzen
+
 Wichtige Dateien
 /etc/samba/smb.conf
 enthält Netzwerkfreigaben
