@@ -1,0 +1,37 @@
+su <username>
+switch user -> meldet sich mit dem übergebenen Benutzer an
+
+cat <dateiname>
+zeigt den Inhalt der Datei an
+
+cut -d: -f1 /etc/passwd
+zeigt alle Benutzer des Systems an
+
+systemctl stop <service-name>
+z.b. systemctl stop samba
+stoppt den Dienst
+
+systemctl start <service-name>
+z.b. systemctl start samba
+startet den Dienst
+
+ls -la
+zeigt liste der Dateien an
+
+pwd
+PrintWorkingDirectory
+zeigt das aktuelle Verzeichnis an
+
+cp <source> <destination>
+CoPy
+Kopiert Dateien
+
+Wichtige Dateien
+/etc/samba/smb.conf
+enthält Netzwerkfreigaben
+
+/var/www/html
+Standardordner der gehosteten Website von nginx
+
+
+
