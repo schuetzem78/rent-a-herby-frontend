@@ -16,6 +16,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { CarouselModule } from 'primeng/carousel';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CarouselModule } from 'primeng/carousel';
     MatChipsModule,
     MatDividerModule,
     MatCardModule,
-    CarouselModule
+    CarouselModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

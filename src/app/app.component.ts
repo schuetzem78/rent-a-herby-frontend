@@ -14,7 +14,6 @@ export class AppComponent {
   products = [new Product(), new Product, new Product];
 }
 
-
 export class Product{
   name="Produktname";
   price="0,11";
