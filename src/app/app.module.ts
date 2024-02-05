@@ -14,9 +14,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { CarouselModule } from 'primeng/carousel';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     TravelroutesComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -38,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatChipsModule,
     MatDividerModule,
     MatCardModule,
+    MatFormFieldModule,
     CarouselModule, 
     HttpClientModule
   ],

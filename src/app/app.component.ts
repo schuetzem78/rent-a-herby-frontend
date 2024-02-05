@@ -10,7 +10,6 @@ export class AppComponent {
   
   AppVersion = version;
 
-
   products = [new Product(), new Product, new Product];
 }
 

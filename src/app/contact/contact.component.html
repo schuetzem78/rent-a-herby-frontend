@@ -1,13 +1,40 @@
 <div class="flex flex-col ml-3 mr-3 gap-4 ">
     <p class="font-bold text-emerald-500 uppercase self-center">Kontakt</p>
     
-    <!-- href="mailto:rentawomo@web.de?subject=Kontakt%20Rent%20a%20Herby"  -->
+    <a 
+        mat-raised-button 
+        href="mailto:rentawomo@web.de?subject=Kontakt%20Rent%20a%20Herby"
+        target="_blank" 
+        class="mat-raised-button w-72 self-center">Schreib uns eine Mail
+	</a>
+
+	
+
+	<a>
+		Oder kontaktiere uns über dieses Kontaktformular
+	</a>
+
+    <form>
+		<label>Betreff: </label>
+		<input 
+			type="text" 
+			name="mailSubject" 
+			size="80"
+			[(ngModel)]="mailTemplate.subject">
+		<br/>
+		<br/>
+		<textarea 
+			name="message" 
+			size="80"
+			rows="10" 
+			cols="30"
+			[(ngModel)]="mailTemplate.text"></textarea>
+    </form>
 
     <a 
         mat-raised-button 
         (click)="sendEmail()"
-        target="_blank" 
-        class="mat-raised-button w-72 self-center">Schreib uns eine Mail</a>
+        class="mat-raised-button w-72 self-center">Anfrage senden</a>
 </div>
 
 <h1>Hier findest du Herby und seine Besitzer (uns)</h1>
