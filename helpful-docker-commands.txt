@@ -1,3 +1,11 @@
+ssh Michael@ds1815-1 -p 22 -t 'sudo docker ps'
+
+@REM echo " \
+@REM docker --help;
+@REM sudo docker ps;
+@REM " \
+@REM ssh Michael@ds1815-1 -p 22
+
 @REM rd /S /Q files-for-docker-container
 @REM md files-for-docker-container
 
@@ -22,7 +30,7 @@ docker image rm rent-a-herby-frontend-image
 docker build --tag rent-a-herby-frontend-image .
 
 @REM Docker-Container erstellen (mit einem Namen, damit er beim nächsten Skript-Lauf auch leicht löschbar ist) und starten
-docker run -d -it -p 4200:80 --name rent-a-herby-frontend-container rent-a-herby-frontend-image
+docker run -d -it -p 4200:80 --name rent-a-herby-frontend-container rent-a-herby-frontend-image -v /volume2/Daten/rent-a-herby-static-website:/usr/share/nginx/html rent-a-herby-frontend-image
 
 @REM Docker-Images auflisten
 @REM docker image ls
