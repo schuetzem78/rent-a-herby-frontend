@@ -24,7 +24,6 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactComponent,
     RentalComponent,
     AccessoriesComponent,
     TravelroutesComponent
@@ -42,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     MatDividerModule,
     MatCardModule,
     MatFormFieldModule,
-    CarouselModule, 
+    CarouselModule,   
+    ContactComponent,  
     HttpClientModule
   ],
   providers: [],

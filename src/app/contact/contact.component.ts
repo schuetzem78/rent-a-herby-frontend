@@ -2,13 +2,34 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { catchError, throwError } from 'rxjs';
 import { MailTemplate } from './mailTemplate';
+import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgIf} from '@angular/common';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
     selector: 'app-contact',
     templateUrl: './contact.component.html',
-    styleUrl: './contact.component.css'
+    styleUrl: './contact.component.css',
+    standalone: true,
+    imports: [FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, NgIf, 
+        MatIconModule, MatButtonModule, MatSelectModule],
 })
 export class ContactComponent {
+    emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+    selected = new FormControl('valid', [Validators.required, Validators.pattern('valid')]);
+
+  selectFormControl = new FormControl('valid', [Validators.required, Validators.pattern('valid')]);
+
+  nativeSelectFormControl = new FormControl('valid', [
+    Validators.required,
+    Validators.pattern('valid'),
+  ]);
+
+  
 
     mailTemplate: MailTemplate = {
         subject: "Frage / Problem bzgl. Herby",
@@ -22,14 +43,14 @@ export class ContactComponent {
 
         console.log("E-Mail wird versendet...");
 
+        
         const httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json'
             })
     	};
 
-		this.http.post(
-            //"http://rent-a-herby:3000/sendmail",
+		this.http.post(            
 			"http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:3000/sendmail",
             this.mailTemplate,
             httpOptions)
