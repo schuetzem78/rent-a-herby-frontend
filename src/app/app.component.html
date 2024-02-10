@@ -1,6 +1,6 @@
-<header>
-  <h1 class="font-bold text-center">Rent a Herby</h1>    
-  <div class="grid grid-flow-row sm:grid-flow-col sm:text-xs text-gray-500">    
+<header class="bg-slate-400">
+  <h1 class="font-bold text-center text-cyan-950">Rent a Herby</h1>    
+  <div class="grid grid-flow-row sm:grid-flow-col sm:text-xs ">    
     <button routerLink="/home" class=" hover:underline uppercase text-sm">Home</button>
     <button routerLink="/rental"class=" hover:underline uppercase text-sm">Rund um Herby</button>
     <button routerLink="/accessories" class="hover:underline uppercase text-sm">Reisezubehör</button>
@@ -8,24 +8,20 @@
     <button routerLink="/contact" class="hover:underline uppercase text-sm">Kontakt</button>
     
   </div>  
-  <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]="9000">
+  <div >
+  <p-carousel [value]="herbyPictures" [numVisible]="4" [numScroll]="3" [circular]="true" [autoplayInterval]="9000">
     <ng-template let-product pTemplate="item">
         <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
             <div class="mb-3">
                 <img src="{{ product.image }}" [alt]="product.name" class="shadow-2" />
-            </div>
-            <!--<div>
-                <h4 class="mb-1">{{ product.name }}</h4>
-                <h6 class="mt-0 mb-3">{{ '$' + product.price }}</h6>                
-                <div class="mt-5 flex align-items-center justify-content-center gap-2">                
-            </div>
-            </div>-->
+            </div>            
         </div>
     </ng-template>
 </p-carousel>
+</div>
 </header>
 
-<main class="main pb-3">  
+<main class="main pb-3 pt-5">  
   <router-outlet></router-outlet>
 </main>
 <mat-divider></mat-divider>

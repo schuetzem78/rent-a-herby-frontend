@@ -1,10 +1,10 @@
 a.mat-raised-button {
   color: white;
-  background-color: #4cc9a4;
+  background-color: #005578;
 }
 
 a.mat-raised-button:hover {
-    background-color: forestgreen;
+    background-color: #007DA7;
 }
 
 mat-card-title {
