@@ -37,5 +37,6 @@ enthält Netzwerkfreigaben
 /var/www/html
 Standardordner der gehosteten Website von nginx
 
-
+sudo su
+switch zu root-user
 
