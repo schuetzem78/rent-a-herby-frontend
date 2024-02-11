@@ -3,17 +3,21 @@
 <form class="example-form">
 	<mat-form-field>
 		<mat-label>Betreff</mat-label>
-		<mat-select [formControl]="selected">
-			<mat-option>Clear</mat-option>
-			<mat-option value="valid">Hilfe rund um Herby</mat-option>
-			<mat-option value="valid">Panne oder Unfall melden</mat-option>
-			<mat-option value="valid">Sonstiges</mat-option>
+		
+		<!-- [formControl]="selected" -->
+		<mat-select 
+			name="topic"
+			[(ngModel)]="contactFormularFields.topic">
+			<!-- <mat-option>Clear</mat-option> -->
+			<mat-option value="help">Hilfe rund um Herby</mat-option>
+			<mat-option value="accident">Panne oder Unfall melden</mat-option>
+			<mat-option value="misc">Sonstiges</mat-option>
 		</mat-select>
 
-		<mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
+		<!-- <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
 		<mat-error *ngIf="selected.hasError('pattern') && !selected.hasError('required')">
 			Your selection is invalid
-		</mat-error>
+		</mat-error> -->
 	</mat-form-field>
 
 	<table class="example-full-width" cellspacing="0">
@@ -48,7 +52,7 @@
 				type="email" 
 				matInput 
 				[formControl]="emailFormControl" 
-				placeholder="pat@example.com"
+				placeholder="vorname.nachname@example.com"
 				[(ngModel)]="contactFormularFields.mailAddress">
 
 			<mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
@@ -61,7 +65,7 @@
 
 		<mat-form-field class="example-full-width">
 			<mat-label>Telefonnummer</mat-label>
-			<span matPrefix>+49 &nbsp;</span>
+			<!-- <span matPrefix>+49 &nbsp;</span> -->
 			<input 
 				name="mobilePhoneNumber"
 				type="tel" 
