@@ -10,10 +10,10 @@
   </div>  
   <div >
   <p-carousel [value]="herbyPictures" [numVisible]="4" [numScroll]="3" [circular]="true" [autoplayInterval]="9000">
-    <ng-template let-product pTemplate="item">
+    <ng-template let-picture pTemplate="item">
         <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
             <div class="mb-3">
-                <img src="{{ product.image }}" [alt]="product.name" class="shadow-2" />
+                <img src="{{ picture.imagePath }}" class="shadow-2" />
             </div>            
         </div>
     </ng-template>
