@@ -73,10 +73,40 @@
         <div>● Bitte prüfe, ob das Frostschutzventil geschlossen ist.</div>
     </mat-expansion-panel>
 
+	<!-- <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Warum lässt sich das Hubbett nicht herunter-/ hinauffahren?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● Bitte prüfe, ob Stromzufuhr gewährleistet ist</div>
+    </mat-expansion-panel> -->
+
 <h1 class="font-bold text-lg pt-8 ml-5 uppercase text-sky-500">Handbücher</h1>
 
 <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 ">
     <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Kontrollpanel</mat-card-title>
+            <mat-card-subtitle>Kontrollpanel "PC180-TR" von CBE</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\manuals\controlpanel\controlpanel-pc180-tr.jpg" 
+                alt="Picture from controll panel">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\controlpanel\000407_01_PC180-TR_Serie 2020.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+	<mat-card>
         <mat-card-header>
           <mat-card-title-group>
             <mat-card-title>Batterie Management System</mat-card-title>
@@ -113,6 +143,26 @@
                 target="_blank" 
                 class="mat-raised-button"
                 href="assets\manuals\stove\manual - fc1346.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+    
+	<mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Topf-Set</mat-card-title>
+            <mat-card-subtitle>Topf-Set PIRATE NG von Brunner.</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\manuals\pot-set\pot-set.jpg" 
+                alt="Picture from pot set">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\pot-set\pot-set.pdf">Download</a>
         </mat-card-content>
     </mat-card>
 
@@ -243,26 +293,6 @@
     <mat-card>
         <mat-card-header>
           <mat-card-title-group>
-            <mat-card-title>Toilette</mat-card-title>
-            <mat-card-subtitle>Toilette THEDFORD C260</mat-card-subtitle>
-            <img 
-                width="120px"
-                src="assets\manuals\toilet\toilet.jpg" 
-                alt="Picture from THEDFORD toilet">
-          </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
-            <a 
-                mat-raised-button
-                target="_blank" 
-                class="mat-raised-button"
-                href="assets\manuals\toilet\UM_C260-series_UM_DE.pdf">Download</a>
-        </mat-card-content>
-    </mat-card>
-
-    <mat-card>
-        <mat-card-header>
-          <mat-card-title-group>
             <mat-card-title>Kühlschrank</mat-card-title>
             <mat-card-subtitle>Kühl-Gefrier-Kombination von THEDFORD (N4000 Serie)</mat-card-subtitle>
             <img 
@@ -277,6 +307,46 @@
                 target="_blank" 
                 class="mat-raised-button"
                 href="assets\manuals\refrigerator\UM_N4000-series_DE.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+	<mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Challenger</mat-card-title>
+            <mat-card-subtitle>Handbuch für den Challenger-Aufbau</mat-card-subtitle>
+            <img 
+                width="120px"
+                src="assets\manuals\challenger\challenger.png" 
+                alt="Picture from Challenger">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\challenger\Allemand-D_CS+M-2022_CHALLENGER.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+	
+	<mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Toilette</mat-card-title>
+            <mat-card-subtitle>Toilette THEDFORD C260</mat-card-subtitle>
+            <img 
+                width="120px"
+                src="assets\manuals\toilet\toilet.jpg" 
+                alt="Picture from THEDFORD toilet">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\toilet\UM_C260-series_UM_DE.pdf">Download</a>
         </mat-card-content>
     </mat-card>
 </div>
