@@ -8,7 +8,14 @@
     	<button routerLink="/contact" class="hover:underline uppercase text-sm">Kontakt</button>
   	</div>  
   	<div >
-		<p-carousel [value]="herbyPictures" [numVisible]="4" [numScroll]="3" [circular]="true" [autoplayInterval]="9000">
+		<p-carousel 
+			[value]="herbyPictures" 
+			[numVisible]="4" 
+			[numScroll]="3" 
+			[circular]="true" 
+			[autoplayInterval]="9000"
+			[responsiveOptions]="responsiveOptions">
+
 			<ng-template let-picture pTemplate="item">
 				<div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
 					<div class="mb-3">

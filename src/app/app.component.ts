@@ -17,6 +17,24 @@ export class AppComponent {
 		new Picture("./../assets/img/Norwegen2.jpg"), 
 		new Picture("./../assets/img/Norwegen3.jpg")
 	];
+
+	responsiveOptions = [
+		{
+			breakpoint: '1024px',
+			numVisible: 4,
+			numScroll: 4
+		},
+		{
+			breakpoint: '810px',
+			numVisible: 3,
+			numScroll: 3
+		},
+		{
+			breakpoint: '560px',
+			numVisible: 2,
+			numScroll: 2
+		}
+	];
 }
 
 export class Picture{  
