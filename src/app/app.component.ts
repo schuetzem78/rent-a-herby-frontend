@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
 import { version } from './../../package.json';
 
 @Component({
@@ -11,11 +11,11 @@ export class AppComponent {
 	AppVersion = version;
 
   	herbyPictures = [
-		new Picture("./../assets/img/Herby1.jpg"), 
-		new Picture("./../assets/img/Herby2.jpg"), 
-		new Picture("./../assets/img/Norwegen.JPG"), 
-		new Picture("./../assets/img/Norwegen2.jpg"), 
-		new Picture("./../assets/img/Norwegen3.jpg")
+		new Picture("./../assets/img/Herby1.jpg", "", ""), 
+		new Picture("./../assets/img/Herby2.jpg", "", ""), 
+		new Picture("./../assets/img/Norwegen.JPG", "", ""), 
+		new Picture("./../assets/img/Norwegen2.jpg", "", ""), 
+		new Picture("./../assets/img/Norwegen3.jpg", "", "")
 	];
 
 	responsiveOptions = [
@@ -39,8 +39,12 @@ export class AppComponent {
 
 export class Picture{  
 	imagePath: string = "";
+	srcset: string = "";
+	sizes: string = "";
 
-	constructor(imagePath: string) {
+	constructor(imagePath: string, srcset: string, sizes: string) {
 		this.imagePath = imagePath;
+		this.srcset = srcset;
+		this.sizes = sizes;
 	}
 }

@@ -55,8 +55,11 @@ export class ContactComponent {
 
 		var mailTemplate = this.convertContactFormularFieldsToMailTemplate(this.contactFormularFields);
 
+		//var backendUrl = "http://localhost:3000";
+		var backendUrl = "http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:3000";
+
 		this.http.post(
-			"http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:3000/sendmail",
+			backendUrl + "/sendmail",
 			mailTemplate,
 			httpOptions)
 			.pipe(

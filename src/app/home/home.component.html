@@ -8,7 +8,11 @@
 <div class="max-w-md mx-auto bg-sky-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
     <div class="md:flex">
         <div class="md:shrink-0">
-        	<img class="h-48 w-full object-cover md:h-full md:w-48" src="../../assets/img/Herby2-400x300.jpg" alt="Rental">
+        	<img 
+				#imageWohnmobilVermietung
+				class="h-48 w-full object-cover md:h-full md:w-48" 
+				alt="camper rental"
+				[src]='imagePathWohnmobilvermietung' >
         </div>
         <div class="p-8">
         	<p class="uppercase tracking-wide text-sm font-semibold mb-2 text-sky-900">Wohnmobilvermietung</p>
@@ -20,7 +24,11 @@
 <div class="max-w-md mx-auto bg-sky-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-2">
     <div class="md:flex">
         <div class="md:shrink-0">
-        <img class="h-48 w-full object-cover md:h-full md:w-48" src="../../assets/img/Board-400x266.jpg" alt="Rental">
+			<img 
+				#imageTravelAccessories
+				class="h-48 w-full object-cover md:h-full md:w-48" 
+				alt="travel accessories"
+				[src]='imagePathTravelAccessories' >
         </div>
         <div class="p-8">
         <p class="uppercase tracking-wide text-sm font-semibold mb-2 text-sky-900">Reisezubehörverleih</p>
@@ -29,6 +37,7 @@
         </div>
     </div>
 </div>
+
 <!--
 <div class="max-w-md mx-auto bg-sky-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-2">
     <div class="md:flex">
