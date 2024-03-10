@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { INotOptimalImageSize } from '../../common/INotOptimalImageSize';
 
 @Component({
@@ -13,12 +13,6 @@ export class HomeComponent implements AfterViewInit {
 	imagePathWohnmobilvermietung = '../../assets/img/herby2/herby2-w192.jpg';
 	imagePathTravelAccessories = '../../assets/img/board/board-w400.jpg'
 
-	@ViewChild('imageWohnmobilVermietung')
-	camperRentalImage: ElementRef | undefined;
-
-	@ViewChild('imageTravelAccessories')
-	travelAccessoriesImage : ElementRef | undefined;
-
 	constructor(
 		private cdRef: ChangeDetectorRef, 
 		private http: HttpClient) {
@@ -26,101 +20,60 @@ export class HomeComponent implements AfterViewInit {
 
 	ngAfterViewInit(): void {
 		
-		this.handleCamperRentalImage();
-		this.handleTravelAccessoriesImage();
-
+		this.imagePathWohnmobilvermietung = this.getImagePath("herby2", "imageWohnmobilVermietungId", new Array(192, 448, 4032));
+		this.imagePathTravelAccessories = this.getImagePath("board", "imageTravelAccessoriesId", new Array(400, 600, 4032));
+		
 		this.cdRef.detectChanges(); 
   	}
 
-	private handleCamperRentalImage() {
-
-		const imageName = 'herby2';
-		let width = this.camperRentalImage?.nativeElement.offsetWidth;
-
-		console.log('ngAfterViewInit - Width: ' + width);
-		let picName: String
-
-		if (width <= 192) {
-			picName = 'herby2-w192.jpg';
-		} else if (width <= 448) {
-			picName = 'herby2-w448.jpg';
-		} else {
-			picName = 'herby2-w4032.jpg';
-		}
-
-		if (width != 192 && width != 448) {
-			console.warn('not optimal image resolution');
-
-			//var backendUrl = "http://localhost:3000";
-			var backendUrl = "http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:3000";
-
-			let notOptimalImageSize = this.getNotOptimalImageSizeObject("Herby2", width);
-	
-			const httpOptions = {
-				headers: new HttpHeaders({
-					'Content-Type': 'application/json'
-				})
-			};
-
-			this.http.post(
-				backendUrl + "/not-optimal-image-size",
-				notOptimalImageSize,
-				httpOptions)
-				.pipe(
-					catchError(this.handleError)
-				).subscribe();
-		}
-
-		this.imagePathWohnmobilvermietung = "../../assets/img/" + imageName + "/" + picName;
-	}
-
-	private handleTravelAccessoriesImage() {
-
-		let width = this.travelAccessoriesImage?.nativeElement.offsetWidth;
-
-		const imageName = 'board';
-
-		console.log("'" + imageName + "' -> Required width: " + width);
-
-		let picName: String
-
-		if (width <= 400) {
-			picName = 'board-w400.jpg';
-		} else if (width <= 600) {
-			picName = 'board-w600.jpg';
-		} else {
-			picName = 'board-w4032.jpg';
-		}
-
-		if (width != 400) {
-			console.warn("'" + imageName + "' -> not optimal image resolution");
-
-			//var backendUrl = "http://localhost:3000";
-			var backendUrl = "http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:3000";
-
-			let notOptimalImageSize = this.getNotOptimalImageSizeObject("board", width);
-	
-			const httpOptions = {
-				headers: new HttpHeaders({
-					'Content-Type': 'application/json'
-				})
-			};
-
-			this.http.post(
-				backendUrl + "/not-optimal-image-size",
-				notOptimalImageSize,
-				httpOptions)
-				.pipe(
-					catchError(this.handleError)
-				).subscribe();
-		}
-
-		this.imagePathTravelAccessories = "../../assets/img/" + imageName + "/" + picName;
+	private getImagePath(imageName: string, elementId: string, availableImageSizes: Array<number>): string {
 		
-		console.log("#### " + this.imagePathTravelAccessories);
+		let htmlElement = document.getElementById(elementId);
+		
+		if (htmlElement === undefined || htmlElement == null) {
+			return "";
+		}
+
+		let width = 0;
+		
+		width = htmlElement.offsetWidth;
+
+		let picName: String = imageName + "-w" + availableImageSizes[availableImageSizes.length - 1] + ".jpg";
+
+		for (const availableImageSize of availableImageSizes) {
+			if (width <= availableImageSize) {
+				picName = imageName + "-w" + availableImageSize + ".jpg";
+				break;
+			}
+		}
+		
+		if (!availableImageSizes.includes(width)) {
+			console.warn("'" + imageName + "' -> not optimal image resolution -> " + width);
+
+			//var backendUrl = "http://localhost:3000";
+			var backendUrl = "http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:3000";
+
+			let notOptimalImageSize = this.getNotOptimalImageSizeObject(imageName, width);
+	
+			const httpOptions = {
+				headers: new HttpHeaders({
+					'Content-Type': 'application/json'
+				})
+			};
+
+			this.http.post(
+				backendUrl + "/not-optimal-image-size",
+				notOptimalImageSize,
+				httpOptions)
+				.pipe(
+					catchError(this.handleError)
+				).subscribe();
+		}
+
+		return "../../assets/img/" + imageName + "/" + picName;
 	}
 
-	private handleError(error: HttpErrorResponse) {
+	private handleError(error: HttpErrorResponse): Observable<never> {
 		if (error.status === 0) {
 			// A client-side or network error occurred. Handle it accordingly.
 			console.error('An error occurred:', error.error);
@@ -139,11 +92,12 @@ export class HomeComponent implements AfterViewInit {
 		return throwError(() => new Error('Something bad happened; please try again later.'));
 	}
 
-	private getNotOptimalImageSizeObject(imageName: string, requestedImageSize: string): INotOptimalImageSize {
+	private getNotOptimalImageSizeObject(imageName: string, requestedImageSize: number): INotOptimalImageSize {
 
 		let clientInformation = {
-			Browser: navigator.userAgent,
-			BrowserLanguage: navigator.language,
+			currentDateTime: this.dateToString_YYYY_MM_dd_HH_mm_ss(new Date()),
+			browser: navigator.userAgent,
+			browserLanguage: navigator.language,
 			screenWidth: screen.width,
 			screenHeight: screen.height,
 			screenAvailWidth: screen.availWidth,
@@ -156,11 +110,32 @@ export class HomeComponent implements AfterViewInit {
 		}
 
 		let result = {
+
 			imageName: imageName,
 			requestedImageSize: requestedImageSize,
 			clientInformation: clientInformation
 		}
 
+		console.log(result);
+
 		return result;
+	}
+
+	private dateToString_YYYY_MM_dd_HH_mm_ss(date: Date): string {
+    
+		var day = date.getDate();
+		var month = date.getMonth() + 1;
+		var hour = date.getHours();
+		var minutes = date.getMinutes();
+		var seconds = date.getSeconds();
+	
+		var dateOfString = date.getFullYear() + "-";
+		dateOfString += (("" + day).length < 2 ? "0" : "") + day + "-";
+		dateOfString += (("" + month).length < 2 ? "0" : "") + month + "-";
+		dateOfString += (("" + hour).length < 2 ? "0" : "") + hour + "-";
+		dateOfString += (("" + minutes).length < 2 ? "0" : "") + minutes + "-";
+		dateOfString += (("" + seconds).length < 2 ? "0" : "") + seconds;
+	
+		return dateOfString;
 	}
 }

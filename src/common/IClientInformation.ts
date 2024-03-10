@@ -1,6 +1,7 @@
 export interface IClientInformation {
-	Browser: string,
-	BrowserLanguage: string,
+	currentDateTime: string
+	browser: string,
+	browserLanguage: string,
 	screenWidth: number,
 	screenHeight: number,
 	screenAvailWidth: number,
