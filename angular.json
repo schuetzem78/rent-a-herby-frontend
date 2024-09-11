@@ -68,12 +68,18 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "ssl": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "rent-a-herby-frontend:build:production"
             },
             "development": {
-              "buildTarget": "rent-a-herby-frontend:build:development"
+              "buildTarget": "rent-a-herby-frontend:build:development",
+              "ssl": true,
+              "sslKey": "localhost.key",
+              "sslCert": "localhost.crt"
             }
           },
           "defaultConfiguration": "development"

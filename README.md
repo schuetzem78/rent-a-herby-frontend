@@ -85,4 +85,19 @@ wird umgeleitet auf Docker-Container
 
 
 
+# Raspery Pi
+### wie verbinde ich mich auf den Raspy
+`ssh michael@rent-a-herby`
+
+### wo finde ich den Ablageort des Frontends
+`/var/www/html`
+
+# SSL Zertifikat erstellen
+- https://praxistipps.chip.de/openssl-zertifikat-erstellen-so-gehts_46492
+
+
+
+
+
+
 

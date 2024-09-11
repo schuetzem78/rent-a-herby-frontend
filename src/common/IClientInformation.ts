@@ -8,7 +8,7 @@ export interface IClientInformation {
 	screenAvailHeight: number,
 	screenColorDepth: number,
 	screenPixelDepth: number,
-	screenOrientation: number,
+	screenOrientation: string,
 	innerWidth: number,
 	innerHeight: number
 }
