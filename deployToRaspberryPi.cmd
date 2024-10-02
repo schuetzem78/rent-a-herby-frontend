@@ -1,9 +1,9 @@
 @ECHO OFF
 
 ECHO Alte Dateien werde geloescht...
-DEL /S /Q \\rent-a-herby\nginx-herby\*
+DEL /S /Q \\rasp5-1\rent-a-herby-frontend\*
 
 ECHO Neue Dateien werden bereitgestellt...
-XCOPY dist\rent-a-herby-frontend\browser \\rent-a-herby\nginx-herby /S /Y
+XCOPY dist\rent-a-herby-frontend\browser \\rasp5-1\rent-a-herby-frontend /S /Y
 
 ECHO fertig
