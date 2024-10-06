@@ -1,24 +1,52 @@
-<header class="bg-slate-400">
-	<h1 class="font-bold text-center text-cyan-950">Rent a Herby</h1>    
-	<div class="grid grid-flow-row sm:grid-flow-col sm:text-xs ">    
-		<button routerLink="/home" class=" hover:underline uppercase text-sm">Home</button>
-		<button routerLink="/rental"class=" hover:underline uppercase text-sm">Rund um Herby</button>
-		<button routerLink="/accessories" class="hover:underline uppercase text-sm">Reisezubehör</button>
-   		<!-- <button routerLink="/travelroutes" class="hover:underline uppercase text-sm">Reiserouten</button> -->
-    	<button routerLink="/contact" class="hover:underline uppercase text-sm">Kontakt</button>
-  	</div>  
-  	<div >
+<header>
+	<mat-toolbar>
+		<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu Button">
+		  <mat-icon>menu</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item routerLink="/home">
+			  <mat-icon>home</mat-icon>
+			  <span>Home</span>
+			</button>
+			<button mat-menu-item routerLink="/rental">
+				<mat-icon>info</mat-icon>
+				<span>Wohnmobilvermietung</span>
+			  </button>
+			<button mat-menu-item routerLink="/accessories">
+				<mat-icon>beach_access</mat-icon>
+				<span>Reisezubehör</span>
+			</button>
+			<!--<button mat-menu-item routerLink="/travelroutes">
+				<mat-icon>map</mat-icon>
+				<span>Reiserouten</span>
+			</button>-->
+			<button mat-menu-item routerLink="/contact">
+			  <mat-icon >mail</mat-icon>
+			  <span>Kontakt</span>
+			</button>			
+		  </mat-menu>
+		
+
+		<span class="font-bold text-cyan-950">Rent a Herby</span>
+		<span class="spacer"></span>	
+		<button mat-icon-button>
+		  <mat-icon>share</mat-icon>
+		</button>
+		
+	</mat-toolbar>	
+		  
+  	<div class="bg-gray-100">
 		<p-carousel 
 			[value]="herbyPictures" 
-			[numVisible]="4" 
+			[numVisible]="6" 
 			[numScroll]="3" 
 			[circular]="true" 
 			[autoplayInterval]="9000"
 			[responsiveOptions]="responsiveOptions">
 
 			<ng-template let-picture pTemplate="item">
-				<div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-					<div class="mb-3">
+				<div class="text-center px-3">
+					<div>
 						<img 
 							class="shadow-2" 	
 							src="{{ picture.imagePath }}" />

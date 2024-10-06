@@ -11,18 +11,29 @@ export class AppComponent {
 	AppVersion = version;
 
   	herbyPictures = [
-		new Picture("./../assets/img/Herby1.jpg", "", ""), 
-		new Picture("./../assets/img/Herby2.jpg", "", ""), 
-		new Picture("./../assets/img/Norwegen.JPG", "", ""), 
-		new Picture("./../assets/img/Norwegen2.jpg", "", ""), 
-		new Picture("./../assets/img/Norwegen3.jpg", "", "")
+		new Picture("./../assets/img/headerSmall/Herby1.jpg"), 
+		new Picture("./../assets/img/headerSmall/Herby2.jpg"), 		
+		new Picture("./../assets/img/headerSmall/HerbyInnen-1.jpg"),
+		new Picture("./../assets/img/headerSmall/HerbyInnen-3.jpg"),
+		new Picture("./../assets/img/headerSmall/HerbyInnen-5.jpg"),		
+		new Picture("./../assets/img/headerSmall/HerbyInnen-7.jpg"),
+		new Picture("./../assets/img/headerSmall/HerbyInnen-8.jpg"),
+		new Picture("./../assets/img/headerSmall/HerbyInnen-9.jpg"),
+		new Picture("./../assets/img/headerSmall/Norwegen.jpg"), 
+		new Picture("./../assets/img/headerSmall/Norwegen2.jpg"), 
+		new Picture("./../assets/img/headerSmall/Norwegen3.jpg"),
 	];
 
 	responsiveOptions = [
 		{
 			breakpoint: '1024px',
+			numVisible: 6,
+			numScroll: 2
+		},
+		{
+			breakpoint: '1024px',
 			numVisible: 4,
-			numScroll: 4
+			numScroll: 2
 		},
 		{
 			breakpoint: '810px',
@@ -39,12 +50,8 @@ export class AppComponent {
 
 export class Picture{  
 	imagePath: string = "";
-	srcset: string = "";
-	sizes: string = "";
 
-	constructor(imagePath: string, srcset: string, sizes: string) {
+	constructor(imagePath: string) {
 		this.imagePath = imagePath;
-		this.srcset = srcset;
-		this.sizes = sizes;
 	}
 }
