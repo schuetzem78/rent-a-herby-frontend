@@ -51,23 +51,23 @@ export class HomeComponent implements AfterViewInit {
 			console.warn("'" + imageName + "' -> not optimal image resolution -> " + width);
 
 			//var backendUrl = "http://localhost:3000";
-			var backendUrl = "http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:3000";
+			// var backendUrl = "http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:3000";
 
-			let notOptimalImageSize = this.getNotOptimalImageSizeObject(imageName, width);
+			// let notOptimalImageSize = this.getNotOptimalImageSizeObject(imageName, width);
 	
-			const httpOptions = {
-				headers: new HttpHeaders({
-					'Content-Type': 'application/json'
-				})
-			};
+			// const httpOptions = {
+			// 	headers: new HttpHeaders({
+			// 		'Content-Type': 'application/json'
+			// 	})
+			// };
 
-			this.http.post(
-				backendUrl + "/not-optimal-image-size",
-				notOptimalImageSize,
-				httpOptions)
-				.pipe(
-					catchError(this.handleError)
-				).subscribe();
+			// this.http.post(
+			// 	backendUrl + "/not-optimal-image-size",
+			// 	notOptimalImageSize,
+			// 	httpOptions)
+			// 	.pipe(
+			// 		catchError(this.handleError)
+			// 	).subscribe();
 		}
 
 		return "../../assets/img/" + imageName + "/" + picName;
