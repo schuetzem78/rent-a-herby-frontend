@@ -70,7 +70,10 @@ export class HomeComponent implements AfterViewInit {
 			// 	).subscribe();
 		}
 
-		return "../../assets/img/" + imageName + "/" + picName;
+		const imagePath = "../../assets/img/" + imageName + "/" + picName;
+		console.log("imagePath at homeComponent: " + imagePath);
+
+		return imagePath;
 	}
 
 	private handleError(error: HttpErrorResponse): Observable<never> {

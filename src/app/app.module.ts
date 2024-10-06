@@ -17,35 +17,28 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { CarouselModule } from 'primeng/carousel';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    RentalComponent,
-    AccessoriesComponent,
-    TravelroutesComponent
-  ],
-  imports: [
-    FormsModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatChipsModule,
-    MatDividerModule,
-    MatCardModule,
-    MatFormFieldModule,
-    CarouselModule,   
-    ContactComponent,  
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HomeComponent,
+        RentalComponent,
+        AccessoriesComponent,
+        TravelroutesComponent
+    ],
+    bootstrap: [AppComponent], imports: [FormsModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatIconModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatExpansionModule,
+        MatChipsModule,
+        MatDividerModule,
+        MatCardModule,
+        MatFormFieldModule,
+        CarouselModule,
+        ContactComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
