@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AccessoriesComponent } from './accessories/accessories.component';
 import { RentalComponent } from './rental/rental.component';
 import { TravelroutesComponent } from './travelroutes/travelroutes.component';
+import { QandaComponent } from './qanda/qanda.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'home', component: HomeComponent},
       { path: 'rental', component: RentalComponent},
+      { path: 'qanda', component: QandaComponent},
       { path: 'travelroutes', component: TravelroutesComponent},
       { path: 'accessories', component: AccessoriesComponent},
       { path: 'contact', component: ContactComponent}

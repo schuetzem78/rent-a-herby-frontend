@@ -1,0 +1,348 @@
+<div class="flex flex-col ml-3 mr-3 gap-4 ">
+   
+    <h1 class="font-bold text-lg pt-8 ml-5 uppercase text-sky-500">Fragen & Antworten</h1>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Warum geht der Gasherd nicht an?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● bitte prüfe, ob die Gasflasche aufgedreht ist</div>
+        <div>● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Warum zeigt der Kühlschrank ein rotes Licht an und blinkt?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>Der Kühlschrank hat keine Energiequelle. Bitte schalte den Kühlschrank über den Knopf komplett aus und gehe je nach Energiequelle wie folgt vor:</div>
+        <mat-chip-listbox>
+            <mat-chip-option (click)="selectRefrigeratorGas()" selected>Gas</mat-chip-option>
+            <mat-chip-option (click)="selectRefrigeratorStrom()">Landstrom</mat-chip-option>
+        </mat-chip-listbox>
+        
+        <div *ngIf="refrigeratorEnergySource=='Gas'">● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+        <div *ngIf="refrigeratorEnergySource=='Strom'">
+            <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div>
+            <div>● Dies kannst du überprüfen, indem du z.B. am Control-Panel prüfst, ob das Symbol für Landstrom leuchtet.</div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Der Boilerschalter wurde betätigt und es erscheint ein rotes Licht?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● Bitte schalte den Boiler erst wieder aus und gehe wir folgt vor:</div>
+
+        <mat-chip-listbox>
+            <mat-chip-option (click)="selectBoilerGas()" selected>Gas</mat-chip-option>
+            <mat-chip-option (click)="selectBoilerStrom()">Landstrom</mat-chip-option>
+        </mat-chip-listbox>
+        
+        <div *ngIf="boilerEnergySource=='Gas'">
+            <div>● Bitte prüfe, ob die Klappe außen abgemacht ist</div>
+            <div>● bitte prüfe, ob der gelbe Knopf beim Crash-Sensor bei der Gasflasche gedrückt ist</div>
+        </div>
+            
+        <div *ngIf="boilerEnergySource=='Strom'">
+            <div>● Bitte prüfe, ob dein Landstromkabel korrekt angeschlossen ist</div>
+            <div>● Dies kannst du überprüfen, indem du z.B. am Control-Panel prüfst, ob das Symbol für Landstrom leuchtet.</div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Warum kommt kein Wasser aus den Hähnen?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● Bitte prüfe, ob die Pumpe eingeschaltet ist</div>
+        <div>● Bitte prüfe, ob genug Wasser im Frischwassertank ist</div>
+        <div>● Bitte prüfe, ob das Frostschutzventil geschlossen ist.</div>
+    </mat-expansion-panel>
+
+	<!-- <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Warum lässt sich das Hubbett nicht herunter-/ hinauffahren?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>● Bitte prüfe, ob Stromzufuhr gewährleistet ist</div>
+    </mat-expansion-panel> -->
+
+<h1 class="font-bold text-lg pt-8 ml-5 uppercase text-sky-500">Handbücher</h1>
+
+<div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 ">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Kontrollpanel</mat-card-title>
+            <mat-card-subtitle>Kontrollpanel "PC180-TR" von CBE</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\manuals\controlpanel\controlpanel-pc180-tr.jpg" 
+                alt="Picture from controll panel">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\controlpanel\controlpanel-pc180-tr.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+	<mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Batterie Management System</mat-card-title>
+            <mat-card-subtitle>Automatischer DUO SYSTEM Wahlschalter für CBE BDS-180 Servicebatterien</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\manuals\battery-management\bds-180.jpg" 
+                alt="Picture from Battery-Manager">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\battery-management\manual - bds-180.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Herd</mat-card-title>
+            <mat-card-subtitle>Gasherd FC1346 von CAN s.r.l.</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\manuals\stove\fc1346.jpg" 
+                alt="Picture from stove">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\stove\manual - fc1346.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+    
+	<mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Topf-Set</mat-card-title>
+            <mat-card-subtitle>Topf-Set PIRATE NG von Brunner.</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\manuals\pot-set\pot-set.jpg" 
+                alt="Picture from pot set">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\pot-set\pot-set.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Standheizung</mat-card-title>
+            <mat-card-subtitle>Webasto MultiControl</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\manuals\parking heater\s-l1600.jpg" 
+                alt="Picture from parking heater">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\parking heater\manual - Webasto MultiControl.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+    
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Markise</mat-card-title>
+            <mat-card-subtitle>Thule Omnistore 5200 NB</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                src="assets\manuals\awning\Thule 5200 NB.jpg" 
+                alt="Picture from awning">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\awning\manual - Thule 5200 NB.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Crashsensor (für Gasflasche)</mat-card-title>
+            <mat-card-subtitle>Truma MonoControl CS</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                width="50px"
+                height="50px"
+                src="assets\manuals\gas-crash-sensor\truma-gas-crash-sensor.jpg" 
+                alt="Picture from gas crash sensor">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\gas-crash-sensor\manual - truma-mono-control-cs-evo.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Wasserpumpe</mat-card-title>
+            <mat-card-subtitle>SHURflo RV FRESH WATER PUMP</mat-card-subtitle>
+            <img 
+                mat-card-md-image 
+                width="100px"
+                height="100px"
+                src="assets\manuals\water-pump\water-pump.jpg" 
+                alt="Picture from water pump">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\water-pump\shurflo-installation-operation-manual.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Ford Transit</mat-card-title>
+            <mat-card-subtitle>Alles rund um das Fahrzeug</mat-card-subtitle>
+            <img 
+                width="120"
+                src="assets\manuals\ford-transit\ford-transit.jpg" 
+                alt="Picture from Ford Transit">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\ford-transit\CG3796deDEU-202110-20211109132608.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Boiler</mat-card-title>
+            <mat-card-subtitle>Truma Boiler</mat-card-subtitle>
+            <img 
+                width="120px"
+                src="assets\manuals\boiler\truma-boiler-control-panel.jpg" 
+                alt="Picture from Truma boiler control panel">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\boiler\truma-water-systems-operating-instructions-bg10-bge10-0218-de.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Kühlschrank</mat-card-title>
+            <mat-card-subtitle>Kühl-Gefrier-Kombination von THEDFORD (N4000 Serie)</mat-card-subtitle>
+            <img 
+                width="120px"
+                src="assets\manuals\refrigerator\refrigerator-cutted.jpg" 
+                alt="Picture from THEDFORD refrigerator">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\refrigerator\UM_N4000-series_DE.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+
+	<mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Challenger</mat-card-title>
+            <mat-card-subtitle>Handbuch für den Challenger-Aufbau</mat-card-subtitle>
+            <img 
+                width="120px"
+                src="assets\manuals\challenger\challenger.png" 
+                alt="Picture from Challenger">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\challenger\Allemand-D_CS+M-2022_CHALLENGER.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+	
+	<mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Toilette</mat-card-title>
+            <mat-card-subtitle>Toilette THEDFORD C260</mat-card-subtitle>
+            <img 
+                width="120px"
+                src="assets\manuals\toilet\toilet.jpg" 
+                alt="Picture from THEDFORD toilet">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <a 
+                mat-raised-button
+                target="_blank" 
+                class="mat-raised-button"
+                href="assets\manuals\toilet\UM_C260-series_UM_DE.pdf">Download</a>
+        </mat-card-content>
+    </mat-card>
+</div>

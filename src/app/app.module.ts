@@ -20,13 +20,15 @@ import { MatCardModule } from '@angular/material/card';
 import { CarouselModule } from 'primeng/carousel';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { QandaComponent } from './qanda/qanda.component';
 
 @NgModule({ declarations: [
         AppComponent,
         HomeComponent,
         RentalComponent,
         AccessoriesComponent,
-        TravelroutesComponent
+        TravelroutesComponent,
+        QandaComponent
     ],
     bootstrap: [AppComponent], imports: [FormsModule,
         BrowserModule,
