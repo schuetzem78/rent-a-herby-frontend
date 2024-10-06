@@ -55,7 +55,7 @@ export class ContactComponent {
 
 		var mailTemplate = this.convertContactFormularFieldsToMailTemplate(this.contactFormularFields);
 
-		var backendUrl = "https://rent-a-herby.de/api";
+		var backendUrl = "https://www.rent-a-herby.de:3000/api";
 
 		this.http.post(
 			backendUrl + "/send-mail",
