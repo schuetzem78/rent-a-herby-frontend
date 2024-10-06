@@ -1,29 +1,36 @@
 <div class="flex flex-col ml-6 mr-6 gap-4 items-center pb-3">
     <p class="font-bold text-sky-900 uppercase">Willkommen bei Rent a Herby!</p>
-    <div class="text-center text-sm">Wir sind dein zuverlässiger Partner für unvergessliche Reiseerlebnisse.
-        Bei Rent a Herby vermieten wir unser Wohnmobil, stellen Reiserouten zur Verfügung und bieten
-        das nötige Reisezubehör. Entdecke die Welt mit Leichtigkeit und Komfort!</div>
+    <div class="text-center text-sm">Wir sind deine zuverlässigen Partner für unvergessliche Reiseerlebnisse.
+        Bei Rent a Herby vermieten wir unser Wohnmobil, stellen Reiserouten zur Verfügung und unterstützen während der Reise.
+        Entdecke die Welt mit Leichtigkeit und Komfort!</div>
 </div>
 
 <div class="grid lg:grid-cols-2 grid-cols-1 gap-2 ml-6 mr-6">
     <div class="max-w-md mx-auto bg-sky-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
         <div class="md:flex">
             <div class="md:shrink-0">
-                <img 
-                    #imageWohnmobilVermietung
-                    id="imageWohnmobilVermietungId"
-                    class="h-48 w-full object-cover md:h-full md:w-48" 
-                    alt="camper rental"
-                    [src]='imagePathWohnmobilvermietung' >
+                <img class="h-48 w-full object-cover md:h-full md:w-48" src="../../assets/img/homesite/WoMo.jfif" alt="faq">
             </div>
             <div class="p-8">
                 <p class="uppercase tracking-wide text-sm font-semibold mb-2 text-sky-900">Wohnmobilvermietung</p>
                 <div class="text-gray-500 text-xs mb-4">Miete unser modernes und komfortables Wohnmobil für einen unvergesslichen Roadtrip. Genieße Freiheit und Flexibilität auf deiner Reise.</div>
-                <button mat-button routerLink="/rental"class="hover:underline mat-button">MEHR INFO</button><button mat-button routerLink="/qanda"class="hover:underline mat-button ml-2">FAQs und Handbücher</button>
+                <button mat-button routerLink="/rental" class="hover:underline mat-button">MEHR INFO</button>
             </div>
         </div>
     </div>
     <div class="max-w-md mx-auto bg-sky-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div class="md:flex">
+            <div class="md:shrink-0">
+                <img class="h-48 w-full object-cover md:h-full md:w-48" src="../../assets/img/homesite/faq.jfif" alt="faq">
+            </div>
+            <div class="p-8">
+                <p class="uppercase tracking-wide text-sm font-semibold mb-2 text-sky-900">Fragen während deiner Reise</p>
+                <div class="text-gray-500 text-xs mb-4">Gerade mit Herby unterwegs und es tauchen Fragen zur Bedienung auf oder es funktioniert etwas nicht. Unsere FAQs und die Handbücher können dir ggf. weiterhelfen. Alternativ kontaktiere uns einfach.</div>
+                <button mat-button routerLink="/qanda"class="hover:underline mat-button">MEHR INFO</button>
+            </div>
+        </div>
+    </div>
+    <!--<div class="max-w-md mx-auto bg-sky-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
         <div class="md:flex">
             <div class="md:shrink-0">
                 <img 
@@ -39,13 +46,13 @@
             <button mat-button routerLink="/accessories"class="hover:underline mat-button">MEHR INFO</button>
             </div>
         </div>
-    </div>
+    </div>-->
 
 
     <div class="max-w-md mx-auto bg-sky-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
         <div class="md:flex">
             <div class="md:shrink-0">
-            <img class="h-48 w-full object-cover md:h-full md:w-48" src="../../assets/img/travelroutes.jpg" alt="Rental">
+            <img class="h-48 w-full object-cover md:h-full md:w-48" src="../../assets/img/homesite/route.jfif" alt="route">
             </div>
             <div class="p-8">
             <p class="uppercase tracking-wide text-sm font-semibold mb-2  text-sky-900">Reiseroutenplanung</p>
@@ -57,7 +64,7 @@
     <div class="max-w-md mx-auto bg-sky-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
         <div class="md:flex">
             <div class="md:shrink-0">
-            <img class="h-48 w-full object-cover md:h-full md:w-48" src="../../assets/img/contact.jpg" alt="Contact">
+            <img class="h-48 w-full object-cover md:h-full md:w-48" src="../../assets/img/homesite/contact.jfif" alt="Contact">
             </div>
             <div class="p-8">
             <p class="uppercase tracking-wide text-sm font-semibold mb-2  text-sky-900">Kontakt</p>
