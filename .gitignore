@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Cert files
-/localhost.*   
+# /localhost.*   

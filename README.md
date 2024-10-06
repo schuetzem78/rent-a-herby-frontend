@@ -95,6 +95,8 @@ wird umgeleitet auf Docker-Container
 # SSL Zertifikat erstellen
 - https://praxistipps.chip.de/openssl-zertifikat-erstellen-so-gehts_46492
 
+- https://bradleycarey.com/posts/get-angular-cli-to-ng-serve-over-https/
+
 
 
 
