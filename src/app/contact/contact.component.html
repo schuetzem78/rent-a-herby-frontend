@@ -1,100 +1,100 @@
-<h3 class="text-sky-700 font-bold">Kontaktformular</h3>
 
-<form class="example-form">
-	<mat-form-field>
-		<mat-label>Betreff</mat-label>
-		
-		<!-- [formControl]="selected" -->
-		<mat-select 
-			name="topic"
-			[(ngModel)]="contactFormularFields.topic">
-			<!-- <mat-option>Clear</mat-option> -->
-			<mat-option value="help">Hilfe rund um Herby</mat-option>
-			<mat-option value="accident">Panne oder Unfall melden</mat-option>
-			<mat-option value="misc">Sonstiges</mat-option>
-		</mat-select>
+<div class="grid lg:grid-cols-2 grid-cols-1 gap-2 ml-6 mr-6">
 
-		<!-- <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
-		<mat-error *ngIf="selected.hasError('pattern') && !selected.hasError('required')">
-			Your selection is invalid
-		</mat-error> -->
-	</mat-form-field>
+	<form class="contact-form">
+		<h3 class="text-sky-700 font-bold mb-3">Kontaktformular</h3>
+		<mat-form-field>
+			<mat-label>Betreff</mat-label>
+					
+			<mat-select 
+				name="topic"
+				[(ngModel)]="contactFormularFields.topic">
+			
+				<mat-option value="help">Hilfe rund um Herby</mat-option>
+				<mat-option value="accident">Panne oder Unfall melden</mat-option>
+				<mat-option value="misc">Sonstiges</mat-option>
+			</mat-select>
 
-	<table class="example-full-width" cellspacing="0">
-		<tr>
-			<td>
-				<mat-form-field class="example-full-width">
-					<mat-label>Vorname</mat-label>
-					<input 
-						name="givenName"
-						matInput 
-						[(ngModel)]="contactFormularFields.givenName">
-
-				</mat-form-field>
-			</td>
-			<td>
-				<mat-form-field class="example-full-width">
-					<mat-label>Nachname</mat-label>
-					<input 
-						name="surname"
-						matInput
-						[(ngModel)]="contactFormularFields.surname">
-				</mat-form-field>
-			</td>
-		</tr>
-	</table>
-
-	<p>
-		<mat-form-field class="example-full-width">
-			<mat-label>Deine EMail-Adresse</mat-label>
-			<input 
-				name="mailAddress"
-				type="email" 
-				matInput 
-				[formControl]="emailFormControl" 
-				placeholder="vorname.nachname@example.com"
-				[(ngModel)]="contactFormularFields.mailAddress">
-
-			<mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-				Bitte gebe eine gültige EMail Adresse ein
-			</mat-error>
-			<mat-error *ngIf="emailFormControl.hasError('required')">
-				EMail-Adressangabe ist <strong>verpflichtend</strong>
-			</mat-error>
+			
 		</mat-form-field>
 
-		<mat-form-field class="example-full-width">
-			<mat-label>Telefonnummer</mat-label>
-			<!-- <span matPrefix>+49 &nbsp;</span> -->
-			<input 
-				name="mobilePhoneNumber"
-				type="tel" 
-				matInput 
-				placeholder=""
-				[(ngModel)]="contactFormularFields.mobilePhoneNumber">
-		</mat-form-field>
-		<mat-form-field class="example-full-width">
-			<mat-label>Deine Notiz</mat-label>
-			<textarea 
-				name="message"
-				matInput 
-				rows="8" 
-				placeholder="Bitte gebe eine Nachricht ein"
-				[(ngModel)]="contactFormularFields.message"></textarea>
-		</mat-form-field>
-	</p>
+		<table class="w-full" cellspacing="0">
+			<tr>
+				<td>
+					<mat-form-field class="w-full">
+						<mat-label>Vorname</mat-label>
+						<input 
+							name="givenName"
+							matInput 
+							[(ngModel)]="contactFormularFields.givenName">
 
-	<div class="example-button-container">
-		<p>Anfrage senden</p>
-		<button mat-mini-fab color="primary" (click)="sendEmail()" aria-label="Example icon button with a menu icon">
-			<mat-icon>send</mat-icon>
-		</button>
+					</mat-form-field>
+				</td>
+				<td>
+					<mat-form-field class="w-full">
+						<mat-label>Nachname</mat-label>
+						<input 
+							name="surname"
+							matInput
+							[(ngModel)]="contactFormularFields.surname">
+					</mat-form-field>
+				</td>
+			</tr>
+		</table>
+
+		<p>
+			<mat-form-field class="w-full">
+				<mat-label>Deine EMail-Adresse</mat-label>
+				<input 
+					name="mailAddress"
+					type="email" 
+					matInput 
+					[formControl]="emailFormControl" 
+					placeholder="vorname.nachname@example.com"
+					[(ngModel)]="contactFormularFields.mailAddress">
+
+				<mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+					Bitte gebe eine gültige EMail Adresse ein
+				</mat-error>
+				<mat-error *ngIf="emailFormControl.hasError('required')">
+					EMail-Adressangabe ist <strong>verpflichtend</strong>
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field class="w-full">
+				<mat-label>Telefonnummer</mat-label>
+				<!-- <span matPrefix>+49 &nbsp;</span> -->
+				<input 
+					name="mobilePhoneNumber"
+					type="tel" 
+					matInput 
+					placeholder=""
+					[(ngModel)]="contactFormularFields.mobilePhoneNumber">
+			</mat-form-field>
+			<mat-form-field class="w-full">
+				<mat-label>Deine Notiz</mat-label>
+				<textarea 
+					name="message"
+					matInput 
+					rows="8" 
+					placeholder="Bitte gebe eine Nachricht ein"
+					[(ngModel)]="contactFormularFields.message"></textarea>
+			</mat-form-field>
+		</p>
+
+		<div class="flex flex-row">
+			<p class="mt-2 mr-3">Anfrage senden</p>
+			<button mat-mini-fab color="primary" (click)="sendEmail()">
+				<mat-icon>send</mat-icon>
+			</button>
+		</div>
+	</form>
+
+	<div>
+		<h3 class="text-sky-700 font-bold mb-3">Hier findest du Herby</h3>
+		<iframe 
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27095.32848223151!2d11.06792626103272!3d49.46787334564644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f562e63c84629%3A0x6fe602aae0c1c7d1!2sWilhelmshavener%20Str.%2C%2090425%20N%C3%BCrnberg-Nordwestliche%20Au%C3%9Fenstadt!5e0!3m2!1sde!2sde!4v1728224358718!5m2!1sde!2sde" 
+			width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+		</iframe>
 	</div>
-</form>
-
-<h1>Hier findest du Herby und seine Besitzer (uns)</h1>
-<iframe
-	src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10369.59136562901!2d11.060156283766894!3d49.476991485001335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f56329031e22b%3A0xf22b6aa8c892466f!2sThon%2C%20N%C3%BCrnberg-Nordwestliche%20Au%C3%9Fenstadt!5e0!3m2!1sde!2sde!4v1705218287306!5m2!1sde!2sde"
-	width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-	referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+</div>
