@@ -45,8 +45,6 @@ export class ContactComponent {
 	}
 
 	sendEmail(): void {
-		console.log("E-Mail wird versendet...");
-
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type': 'application/json'
@@ -55,7 +53,7 @@ export class ContactComponent {
 
 		var mailTemplate = this.convertContactFormularFieldsToMailTemplate(this.contactFormularFields);
 
-		var backendUrl = "https://www.rent-a-herby.de:3000/api";
+		var backendUrl = "https://rent-a-herby.de:3000/api";
 
 		this.http.post(
 			backendUrl + "/send-mail",
@@ -65,7 +63,17 @@ export class ContactComponent {
 				catchError(this.handleError)
 			).subscribe();
 
-		console.log("E-Mail wurde versendet");
+		// zwei mal probieren
+		
+		backendUrl = "https://www.rent-a-herby.de:3000/api";
+
+		this.http.post(
+			backendUrl + "/send-mail",
+			mailTemplate,
+			httpOptions)
+			.pipe(
+				catchError(this.handleError)
+			).subscribe();
 	}
 
 	private handleError(error: HttpErrorResponse) {
@@ -88,8 +96,6 @@ export class ContactComponent {
 	}
 
 	private convertContactFormularFieldsToMailTemplate(contactFormularFields: IContactFormularFields): IMailTemplate {
-
-		console.log(contactFormularFields.givenName);
 
 		var subject = this.getTopicTranslation(contactFormularFields.topic);
 
