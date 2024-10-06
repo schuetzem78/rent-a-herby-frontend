@@ -4,9 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "start ssl" : "ng serve -o --ssl --ssl-key localhost.key --ssl-cert localhost.crt",
     "build": "ng build --output-hashing=all",
-    "build ssl": "ng build --output-hashing=all --ssl --ssl-key localhost.key --ssl-cert localhost.crt",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "tailwind": "npx tailwindcss -i ./src/styles.css -o ./src/tailwind-generated.css --watch"

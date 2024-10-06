@@ -69,7 +69,6 @@ docker ps -a
 ### Docker-Container starten
 docker container start f380d0762fba
 
-
 sudo docker ps
 
 Öffentliche Adresse: 
@@ -79,11 +78,8 @@ http://rent-a-herby.785vrh4ungtam6ne.myfritz.net:80
 Port (Standardport): 80
 wird umgeleitet auf Docker-Container
 
-
 ### Image Banner Carousel
 - https://primeng.org/carousel
-
-
 
 # Raspery Pi
 ### wie verbinde ich mich auf den Raspy
@@ -91,15 +87,3 @@ wird umgeleitet auf Docker-Container
 
 ### wo finde ich den Ablageort des Frontends
 `/var/www/html`
-
-# SSL Zertifikat erstellen
-- https://praxistipps.chip.de/openssl-zertifikat-erstellen-so-gehts_46492
-
-- https://bradleycarey.com/posts/get-angular-cli-to-ng-serve-over-https/
-
-
-
-
-
-
-
