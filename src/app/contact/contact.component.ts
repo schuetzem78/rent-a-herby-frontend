@@ -58,7 +58,7 @@ export class ContactComponent {
 		var backendUrl = "http://rent-a-herby.de/api";
 
 		this.http.post(
-			backendUrl + "/sendmail",
+			backendUrl + "/send-mail",
 			mailTemplate,
 			httpOptions)
 			.pipe(
