@@ -1,0 +1,23 @@
+h1 {
+    font-size:large;
+    font-weight: bold;
+}
+
+h2 {
+    font-size:medium;    
+    font-weight: bold;
+}
+
+h3 {
+    font-size:small;
+    font-weight: bold;
+}
+
+p {
+    font-size:smaller;
+}
+
+a{
+    font-size:smaller;
+    color: blue;
+}

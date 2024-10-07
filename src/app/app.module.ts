@@ -21,6 +21,8 @@ import { CarouselModule } from 'primeng/carousel';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { QandaComponent } from './qanda/qanda.component';
+import { ImprintComponent } from './imprint/imprint.component';
+import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -28,7 +30,8 @@ import { QandaComponent } from './qanda/qanda.component';
         RentalComponent,
         AccessoriesComponent,
         TravelroutesComponent,
-        QandaComponent
+        QandaComponent,        
+        ImprintComponent, PrivacypolicyComponent
     ],
     bootstrap: [AppComponent], imports: [FormsModule,
         BrowserModule,
