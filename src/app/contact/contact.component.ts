@@ -32,6 +32,8 @@ export class ContactComponent {
 	// 	Validators.pattern('help'),
 	// ]);
 
+	currentUrl: string = "";
+
 	contactFormularFields: IContactFormularFields = {
 		topic: "help",
 		givenName: "",
@@ -44,6 +46,10 @@ export class ContactComponent {
 	constructor(private http: HttpClient) {
 	}
 
+	ngOnInit() {
+		this.currentUrl = window.location.href; 
+	}
+
 	sendEmail(): void {
 		const httpOptions = {
 			headers: new HttpHeaders({
@@ -53,7 +59,18 @@ export class ContactComponent {
 
 		var mailTemplate = this.convertContactFormularFieldsToMailTemplate(this.contactFormularFields);
 
-		var backendUrl = "https://rent-a-herby.de:3000/api";
+		//Der Host-Teil der URL des aufgerufenen Backends muss aus CORS-Gründen der selbe sein wie der aktuelle Host-Teil vom Frontend
+		// https://rent-a-herby.de:80/#/contact muss https://rent-a-herby.de:3000/api aufrufen
+		// https://www.rent-a-herby.de:80/#/contact muss https://www.rent-a-herby.de:3000/api aufrufen
+		// deshalb kann die Backend-URL nicht fest codiert sein. Sie wird jetzt also aus dem URL des Frontends ermittelt
+
+		console.log("currentURL: " + this.currentUrl);
+
+		const url = new URL(this.currentUrl);
+		
+		var backendUrl = "https://" + url.hostname + ":3000/api"
+		
+		console.log("Backend-URL: " + backendUrl);
 
 		this.http.post(
 			backendUrl + "/send-mail",
