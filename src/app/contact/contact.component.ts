@@ -62,18 +62,6 @@ export class ContactComponent {
 			.pipe(
 				catchError(this.handleError)
 			).subscribe();
-
-		// zwei mal probieren
-		
-		backendUrl = "https://www.rent-a-herby.de:3000/api";
-
-		this.http.post(
-			backendUrl + "/send-mail",
-			mailTemplate,
-			httpOptions)
-			.pipe(
-				catchError(this.handleError)
-			).subscribe();
 	}
 
 	private handleError(error: HttpErrorResponse) {
@@ -108,7 +96,7 @@ export class ContactComponent {
 
 		let result = {
 			subject: subject,
-			text: mailBody,
+			mailBody: mailBody,
 		}
 
 		return result;
