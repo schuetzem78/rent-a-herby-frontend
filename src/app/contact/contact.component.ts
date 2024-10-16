@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { IContactFormularFields } from './IContactFormularFields';
-import { IMailTemplate } from './IMailTemplate';
+import { IMessageTemplate } from './IMessageTemplate';
 
 @Component({
 	selector: 'app-contact',
@@ -57,7 +57,7 @@ export class ContactComponent {
 			})
 		};
 
-		var mailTemplate = this.convertContactFormularFieldsToMailTemplate(this.contactFormularFields);
+		var messageTemplate = this.convertContactFormularFieldsToMessageTemplate(this.contactFormularFields);
 
 		//Der Host-Teil der URL des aufgerufenen Backends muss aus CORS-Gründen der selbe sein wie der aktuelle Host-Teil vom Frontend
 		// https://rent-a-herby.de:80/#/contact muss https://rent-a-herby.de:3000/api aufrufen
@@ -73,8 +73,8 @@ export class ContactComponent {
 		console.log("Backend-URL: " + backendUrl);
 
 		this.http.post(
-			backendUrl + "/send-mail",
-			mailTemplate,
+			backendUrl + "/send-message",
+			messageTemplate,
 			httpOptions)
 			.pipe(
 				catchError(this.handleError)
@@ -100,20 +100,18 @@ export class ContactComponent {
 		return throwError(() => new Error('Something bad happened; please try again later.'));
 	}
 
-	private convertContactFormularFieldsToMailTemplate(contactFormularFields: IContactFormularFields): IMailTemplate {
+	private convertContactFormularFieldsToMessageTemplate(contactFormularFields: IContactFormularFields): IMessageTemplate {
 
-		var subject = this.getTopicTranslation(contactFormularFields.topic);
+		var mailSubject = this.getTopicTranslation(contactFormularFields.topic);
+		var mailBody = contactFormularFields.message;
 
-		var mailBody =
-			contactFormularFields.message + "\r\n" +
-			"#############################\r\n" +
-			"Name: " + contactFormularFields.givenName + " " + contactFormularFields.surname + "\r\n" +
-			"Mail-Adresse: " + contactFormularFields.mailAddress + "\r\n" +
-			"Telefon: " + contactFormularFields.mobilePhoneNumber;
-
-		let result = {
-			subject: subject,
-			mailBody: mailBody,
+		let result: IMessageTemplate = {
+			givenName: contactFormularFields.givenName,
+			surname: contactFormularFields.surname,
+			fromMail: contactFormularFields.mailAddress,
+			mobilePhoneNumber: contactFormularFields.mobilePhoneNumber,
+			title: mailSubject,
+			message: mailBody,
 		}
 
 		return result;
