@@ -10,8 +10,8 @@ import { INotOptimalImageSize } from '../../common/INotOptimalImageSize';
 })
 export class HomeComponent implements AfterViewInit {
 
-	imagePathWohnmobilvermietung = '../../assets/img/herby2/herby2-w192.jpg';
-	imagePathTravelAccessories = '../../assets/img/board/board-w400.jpg'
+	imagePathWohnmobilvermietung = 'assets/img/herby2/herby2-w192.jpg';
+	imagePathTravelAccessories = 'assets/img/board/board-w400.jpg'
 
 	constructor(
 		private cdRef: ChangeDetectorRef, 
@@ -70,7 +70,7 @@ export class HomeComponent implements AfterViewInit {
 			// 	).subscribe();
 		}
 
-		const imagePath = "../../assets/img/" + imageName + "/" + picName;
+		const imagePath = "assets/img/" + imageName + "/" + picName;
 		console.log("imagePath at homeComponent: " + imagePath);
 
 		return imagePath;
