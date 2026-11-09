@@ -6,7 +6,7 @@
     "start": "ng serve -o",
     "build": "ng build --output-hashing=all",
     "prod-build": "ng build --configuration production --output-hashing=all",
-    "pages-build": "ng build --configuration production --base-href /rent-a-herby-frontend/",
+    "pages-build": "ng build --configuration production --base-href /",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "tailwind": "npx tailwindcss -i ./src/styles.css -o ./src/tailwind-generated.css --watch"

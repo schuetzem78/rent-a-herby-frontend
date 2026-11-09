@@ -31,7 +31,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## GitHub Pages
 
-Bei jedem Push auf `main` wird die Angular-Anwendung gebaut und automatisch auf GitHub Pages veröffentlicht. Der Build ist auf die Projektadresse `https://schuetzem78.github.io/rent-a-herby-frontend/` konfiguriert.
+Bei jedem Push auf `main` wird die Angular-Anwendung gebaut und automatisch auf GitHub Pages veröffentlicht. Die Website ist unter `https://www.rent-a-herby.de/` erreichbar; `https://rent-a-herby.de/` wird dorthin weitergeleitet.
 
 Einmalig in GitHub unter **Settings > Pages > Build and deployment** als **Source** `GitHub Actions` auswählen. Der veröffentlichte Stand und die URL sind anschließend im Workflow **Deploy to GitHub Pages** unter **Actions** zu sehen.
 
