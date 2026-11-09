@@ -1,6 +1,6 @@
 # Stage 1: Compile and Build angular codebase
 # Use official node image as the base image
-FROM node:latest as build
+FROM docker.io/library/node:22-alpine as build
 
 # Set the working directory
 WORKDIR /usr/local/app
@@ -16,7 +16,7 @@ RUN npm run build
 
 # Stage 2: Serve app with nginx server
 # Use official nginx image as the base image
-FROM nginx:alpine
+FROM docker.io/library/nginx:alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
@@ -26,12 +26,4 @@ COPY --from=build /usr/local/app/dist/rent-a-herby-frontend/browser /usr/share/n
 # Expose port
 EXPOSE 80
 
-
-
-
-
-# FROM nginx:alpine
-# COPY nginx.conf /etc/nginx/nginx.conf
-# COPY /dist/aston-villa-app /usr/share/nginx/html
-
-# EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

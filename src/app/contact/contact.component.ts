@@ -68,12 +68,13 @@ export class ContactComponent {
 
 		const url = new URL(this.currentUrl);
 		
-		var backendUrl = "https://" + url.hostname + ":3000/api"
-		
-		console.log("Backend-URL: " + backendUrl);
+		var backendUrl = "https://" + url.hostname + "/api"		//port muss hier nicht angegeben werden, weil sich der reverse-proxy (caddy) darum kümmert
+		var sendMessageUrl = backendUrl + "/send-message";
+
+		console.log("SendMessage-URL: " + sendMessageUrl);
 
 		this.http.post(
-			backendUrl + "/send-message",
+			sendMessageUrl,
 			messageTemplate,
 			httpOptions)
 			.pipe(

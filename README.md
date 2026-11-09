@@ -29,6 +29,12 @@ siehe: https://tailwindcss.com/docs/installation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
+## GitHub Pages
+
+Bei jedem Push auf `main` wird die Angular-Anwendung gebaut und automatisch auf GitHub Pages veröffentlicht. Der Build ist auf die Projektadresse `https://schuetzem78.github.io/rent-a-herby-frontend/` konfiguriert.
+
+Einmalig in GitHub unter **Settings > Pages > Build and deployment** als **Source** `GitHub Actions` auswählen. Der veröffentlichte Stand und die URL sind anschließend im Workflow **Deploy to GitHub Pages** unter **Actions** zu sehen.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -87,3 +93,21 @@ wird umgeleitet auf Docker-Container
 
 ### wo finde ich den Ablageort des Frontends
 `/var/www/html`
+
+
+
+
+
+# Installation von caddy
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+
+# IPs, Portweiterleitung & Co
+https://www.rent-a-herby.de:443 -> fritz.box -> 192.168.178.54
+https://www.rent-a-herby.de:3000 -> fritz.box -> 192.168.178.54
+http://www.rent-a-herby.de:80 -> fritz.box -> 192.168.178.54
+http://www.rent-a-herby.de:2346 -> fritz.box -> 192.168.178.54
+http://www.rent-a-herby.de:2342 -> fritz.box -> 192.168.178.54
