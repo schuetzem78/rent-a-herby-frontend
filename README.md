@@ -35,6 +35,24 @@ Bei jedem Push auf `main` wird die Angular-Anwendung gebaut und automatisch auf 
 
 Einmalig in GitHub unter **Settings > Pages > Build and deployment** als **Source** `GitHub Actions` auswählen. Der veröffentlichte Stand und die URL sind anschließend im Workflow **Deploy to GitHub Pages** unter **Actions** zu sehen.
 
+## Feature-Branch-Vorschau mit Podman
+
+Bei Pushes auf Branches mit dem Muster `feature/*` oder `feature-*` baut der Workflow **Build preview container** ein Container-Image und veröffentlicht es in der GitHub Container Registry. Der Pages-Workflow wird dadurch nicht ausgelöst und die Live-Website bleibt unberührt.
+
+Das Image erhält einen Branch-Tag sowie einen unveränderlichen Commit-Tag. Die genauen Namen stehen in der Zusammenfassung des jeweiligen Workflow-Laufs unter **Actions**.
+
+Das Package liegt unter `ghcr.io/schuetzem78/rent-a-herby-frontend`. Prüfe nach dem ersten Workflow-Lauf unter **GitHub-Profil > Packages > rent-a-herby-frontend > Package settings**, dass die Sichtbarkeit **Private** ist. Falls Berechtigungen vom öffentlichen Repository geerbt werden, deaktiviere die Vererbung, damit nur berechtigte Nutzer das Image laden können.
+
+Für ein privates Image benötigst du lokal einen Personal Access Token (classic) mit mindestens `read:packages`. Melde dich an und starte anschließend den Container:
+
+```sh
+podman login ghcr.io -u DEIN_GITHUB_BENUTZERNAME
+podman pull ghcr.io/schuetzem78/rent-a-herby-frontend:feature-mein-feature
+podman run --rm --name rent-a-herby-preview -p 8080:80 ghcr.io/schuetzem78/rent-a-herby-frontend:feature-mein-feature
+```
+
+Podman fragt beim Login nach dem Token. Die Vorschau ist danach unter `http://localhost:8080` erreichbar. Ersetze `feature-mein-feature` durch den Branch-Tag aus der Workflow-Zusammenfassung.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
