@@ -53,9 +53,12 @@ jobs:
         env:
           IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
         run: |
+          IMAGE_TAG="${IMAGE_TAGS%%$'\n'*}"
           {
             echo "### Preview container image"
             echo '```'
-            echo "$IMAGE_TAGS"
+            echo "podman pull $IMAGE_TAG"
+            echo "podman run --rm --name rent-a-herby-preview -p 8080:80 $IMAGE_TAG"
             echo '```'
+            echo "Open the preview at [http://localhost:8080](http://localhost:8080)."
           } >> "$GITHUB_STEP_SUMMARY"
